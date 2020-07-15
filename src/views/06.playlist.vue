@@ -176,16 +176,16 @@ export default {
         id
       }
     }).then(res=>{
-      console.log(res);
-      let url = res.data.data[0].url;
-      if (!url) {
-        this.$message.error('该资源为VIP专享，暂不支持播放 ！')
-      } else {
-        this.$parent.musicUrl = url;
-      // 设置给父组件的播放地址
+        console.log(res);
+        let url = res.data.data[0].url;
+        if (!url) {
+          this.$message.error('该资源为VIP专享，暂不支持播放 ！')
+        } else {
+          this.$parent.musicUrl = url;
+        // 设置给父组件的播放地址
+        }
+        })
       }
-    })
-    }
     },
   
   created() {

@@ -10,7 +10,6 @@ Vue 版仿网易云音乐，
 
 API 来自(https://github.com/Binaryify/NeteaseCloudMusicApi)进行反向代理
 
-
 ##### 使用技术
 
 - vue2.6.11
