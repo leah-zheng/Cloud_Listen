@@ -13,7 +13,7 @@
         </div>
         <div class="play-wrap">
           <span class="iconfont icon-circle-play"></span>
-          <span class="text">播放全部</span>
+          <span class="text" @click="getUrl(listContent.tracks[0].id)">播放全部</span>
         </div>
         <div class="tag-wrap">
           <span class="title" v-if='listContent.tags.length!=0'>标签:</span>
@@ -145,8 +145,8 @@ export default {
       // 热门评论
       hotComments:[],
       //最新评论
-      comments:[]
-      
+      comments:[],
+     
     };
   },
   methods: {
@@ -178,8 +178,12 @@ export default {
     }).then(res=>{
       console.log(res);
       let url = res.data.data[0].url;
-      this.$parent.musicUrl = url;
+      if (!url) {
+        this.$message.error('该资源为VIP专享，暂不支持播放 ！')
+      } else {
+        this.$parent.musicUrl = url;
       // 设置给父组件的播放地址
+      }
     })
     }
     },
@@ -196,6 +200,20 @@ export default {
       console.log(res);
       //获取歌单的详情介绍
       this.listContent = res.data.playlist;
+      
+      
+      for (let i = 0; i < this.listContent.tracks.length; i++) {
+        
+        let min = parseInt(this.listContent.tracks[i].dt/1000/60);
+        let sec = parseInt(this.listContent.tracks[i].dt/1000%60);
+        if (min < 10) {
+          min = '0' + min
+        }
+        if (sec < 10) {
+          sec = '0' + sec
+        }
+        this.listContent.tracks[i].dt = min + ':' + sec;
+      }
       
     }),
     //获取热门评论
