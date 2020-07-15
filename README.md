@@ -4,7 +4,7 @@
 
 Vue 版仿网易云音乐，
 
-[项目预览](https://leah-zheng.github.io/CloudListen/)
+[项目预览](https://leah-zheng.github.io/Cloud_Listen/)
 
 #### 软件架构
 
