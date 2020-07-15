@@ -13,7 +13,7 @@
         </div>
         <div class="play-wrap">
           <span class="iconfont icon-circle-play"></span>
-          <span class="text">播放全部</span>
+          <span class="text" @click="getUrl(listContent.tracks[0].id)">播放全部</span>
         </div>
         <div class="tag-wrap">
           <span class="title" v-if='listContent.tags.length!=0'>标签:</span>
@@ -145,8 +145,8 @@ export default {
       // 热门评论
       hotComments:[],
       //最新评论
-      comments:[]
-      
+      comments:[],
+     
     };
   },
   methods: {
