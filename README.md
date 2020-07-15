@@ -4,18 +4,17 @@
 
 Vue 版仿网易云音乐，
 
-[项目预览](http://catbk.cn:3000)
+[项目预览](https://leah-zheng.github.io/CloudListen/)
 
 #### 软件架构
 
-后端使用[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)进行反向代理
+API 来自(https://github.com/Binaryify/NeteaseCloudMusicApi)进行反向代理
 
-数据来源于网易云音乐接口
 
 ##### 使用技术
 
 - vue2.6.11
-- vue-router3.1.5
+- vue-router3.1.6
 - axios0.19.2
 - element-ui2.13.0
 
