@@ -38,9 +38,7 @@
           <td>{{item.album.artists["0"].name}}</td>
           <td>{{item.album.name}}</td>
           <td>{{item.duration}}</td>
-          
         </tr>
-
       </tbody>
     </table>
   </div>
